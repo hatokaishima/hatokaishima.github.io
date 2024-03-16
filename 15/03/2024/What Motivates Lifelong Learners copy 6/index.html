@@ -1,55 +1,79 @@
-<!DOCTYPE html>
-<html>
-  <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-    name="viewport"
-  />
-  <title>for a brave new world</title>
-  
-<link rel="stylesheet" href="/css/style.css">
 
-<meta name="generator" content="Hexo 6.3.0"></head>
-  <body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>what motivates lifelong learners | for a brave new world</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/solarized-light.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="/custom.css"/>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icon512.png">
+    <meta name="theme-color" content="#ffffff"/>
     
-<header class="header">
-  <div class="blog-title">
-    <a href="/" class="logo">for a brave new world</a>
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <script>
+      if ('serviceWorker' in navigator && false) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/sw.js', {scope: '/'})
+            .then(function (registration) {
+              // console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            })
+            .catch(function (err) {
+              console.log('ServiceWorker registration failed: ', err);
+            });
+        });
+      }
+    </script>
+  <div id="page-container">
+    <nav class="navbar nav-shadow" role="navigation" aria-label="main navigation">
+  <div class="container">
+      <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+              <img src="/icon192.png" height="50">
+          </a>
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+             data-target="mainNavbar">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+          </a>
+      </div>
+      <div id="mainNavbar" class="navbar-menu">
+          <div class="navbar-start">
+              <a class="navbar-item" href="/"> for a brave new world </a>
+              <a class="navbar-item" href="/archives"> Archives </a>
+              <a class="navbar-item" href="/about"> About </a>
+          </div>
+      </div>
   </div>
-  <nav class="navbar">
-    <ul class="menu">
-      
-      <li class="menu-item">
-        <a href="/" class="menu-item-link"
-          >home</a
-        >
-      </li>
-      
-      <li class="menu-item">
-        <a href="/tweet" class="menu-item-link"
-          >tweet</a
-        >
-      </li>
-      
-      <li class="menu-item">
-        <a href="/about" class="menu-item-link"
-          >about</a
-        >
-      </li>
-      
-    </ul>
-  </nav>
-</header>
-    <main class="main">
-<article class="post">
-  <div class="post-title">
-    <h2 class="title">what motivates lifelong learners</h2>
-  </div>
-  <div class="post-meta">
-    <span class="post-time">15-03-2024</span>
-  </div>
-  <div class="post-content"><p><img src="/../images/Oct21_11_HBRStaff.jpg"></p>
+</nav>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+  if ($navbarBurgers.length > 0) {
+    $navbarBurgers.forEach( el => {
+      el.addEventListener('click', () => {
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+      });
+    });
+  }
+});
+</script>
+    <div id="content-wrap">
+        <div class="container">
+          <div class="article-container">
+  <h1 class="title is-3 is-4-mobile">what motivates lifelong learners</h1>
+  <article>
+      <div class="contents">
+        
+      </div>
+      <p><img src="/../images/Oct21_11_HBRStaff.jpg"></p>
 <p>It seems that everyone in business today is talking about the need for all workers to engage in lifelong learning as a response to the rapid pace of technological and strategic change all around us. But I’ve found that most executives and talent management professionals who are charged with getting their people to learn aren’t thinking about what drives real learning — the creation of new knowledge, not just the handoff of existing knowledge. As a result, many companies are missing opportunities to motivate their employees to engage in the kind of learning that will actually help them innovate and keep pace with their customers’ changing needs.</p>
 <p>Today, simply having employees participate in upskilling programs is not enough. These training programs are largely focused on sharing existing knowledge — skills that already exist. But in a rapidly changing world, existing knowledge quickly becomes obsolete. We need to broaden our definition of “learning” to include creating new knowledge. We need a marketer to experiment with new social media and analytics tools. We need a factory worker to find new uses for a “job-killing” robot. We need an IT technician to figure out a new way to address tickets using AI.</p>
 <p>Developing new knowledge in that way requires significant and sustained effort and on-the-job risk-taking, much more so than a traditional upskilling program. Thus learners need to be much more deeply motivated to engage in it. But I rarely hear executives asking why their employees would want to pursue lifelong learning. When pressed, the answer tends to be that workers need to pursue it because if they don’t they will lose their jobs as their existing skills become obsolete. So, the motivation executives bank on is fear — your fear of losing your job.</p>
@@ -76,7 +100,50 @@
 <blockquote>
 <p>by John Hagel III <a target="_blank" rel="noopener" href="https://hbr.org/2021/10/what-motivates-lifelong-learners">@harvard business review</a><br>recently retired from Deloitte, where he founded and led the Center for the Edge, a research center based in Silicon Valley. A long-time resident of Silicon Valley, he is also a compulsive writer, having published eight books, including his most recent one, The Journey Beyond Fear. He will be establishing a new Center to offer programs based on the book.</p>
 </blockquote>
+
+      <p class="copyright"><strong>Links: <a href="https://hatokaishima.github.io/15/03/2024/What%20Motivates%20Lifelong%20Learners%20copy%206/">https://hatokaishima.github.io/15/03/2024/What%20Motivates%20Lifelong%20Learners%20copy%206/</a></strong></p>
+  </article>
+  <div id="comment">
+    
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function() {
+        this.page.url = "https://hatokaishima.github.io/15/03/2024/What%20Motivates%20Lifelong%20Learners%20copy%206/"; // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "cltttf2qo0004mgkt4ske4ctf"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+  
+      (function() {
+        var d = document,
+          s = d.createElement("script");
+        s.src = "https://iometa.disqus.com/embed.js";
+        s.setAttribute("data-timestamp", +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    
 </div>
-</article></main>
+</div>
+        </div>
+    </div>
+    
+<footer id="footer">
+    <div class="content has-text-centered">
+        <p>
+            © 2024 <a href="https://hatokaishima.github.io">shima</a>.
+            Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>.
+            Theme <a target="_blank" rel="noopener" href="https://github.com/songquanpeng/hexo-theme-lightx">lightx</a>.
+            
+        </p>
+    </div>
+</footer>
+  </div>
+  
+    <script id="dsq-count-scr" src="//iometa.disqus.com/count.js" async></script>
+  
+  
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
   </body>
 </html>
