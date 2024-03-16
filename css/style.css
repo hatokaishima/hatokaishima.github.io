@@ -105,7 +105,7 @@ a
 
 .post-header
 {
-    margin-bottom: 48px;
+    margin-bottom: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -114,7 +114,7 @@ a
 }
 .post-header .logo
 {
-    font-size: 1rem;
+    font-size: 3rem;
 }
 
 .post-list
