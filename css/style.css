@@ -51,7 +51,7 @@ a
 {
     padding-bottom: 48px;
     margin-bottom: 48px;
-    border-bottom: 1px solid var(--line-1);
+    border-bottom: 3px solid var(--line-1);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -130,7 +130,7 @@ a
     width: 100%;
     padding-bottom: 48px;
     margin-bottom: 48px;
-    border-bottom: 1px dashed var(--line-2);
+    border-bottom: 1px dotted var(--line-2);
 }
 .post-title
 {
