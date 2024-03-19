@@ -71,6 +71,7 @@ a
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
+    background-color: #FAF0E6;
 }
 .nav
 {
@@ -81,6 +82,7 @@ a
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
+    background-color: #FAF0E6;
 }
 .nav li
 {
