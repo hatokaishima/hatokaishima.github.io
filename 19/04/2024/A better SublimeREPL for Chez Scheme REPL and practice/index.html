@@ -39,13 +39,13 @@
 <li>DrRacket. Although it is rebuilt on Chez Scheme, it does not support Chez Scheme well and even Scheme(R6RS) itself. You will come across some strange error warnings. You can try some code snippets of <em>The Scheme Programming Language</em>(4th edition), especially the chapter 2. </li>
 <li>VScode. No taste? The GUI is too complicated. Its REPL function works terribly even though it offers a Chez Scheme REPL plug-in. The most important thing is that it is as RAM memory-hogging as DrRacket. Both of their user experience is bad.</li>
 </ol>
-<p>As to SublimeREPL, you have just to make three changes for a better experience.</p>
+<p>As to SublimeREPL (for MacOs, Linux does likewise), you have just to make three changes for a better experience.</p>
 <ol>
 <li>In ‘Sublime Text&#x2F;Packages&#x2F;SublimeREPL&#x2F;config&#x2F;Scheme’ (via ‘settings-browse packages’ of Sublime), under ‘“id”: “repl_scheme”‘:<br>change:<br><code>&quot;osx&quot;: [&quot;scheme&quot;],</code><br>to:<br><code>&quot;osx&quot;: [&quot;scheme&quot;, &quot;$file&quot;],</code>  </li>
 <li>In the same place as #1. :<br>change:<br><code>&quot;syntax&quot;: &quot;Packages/sublime-scheme-syntax/Scheme.tmLanguage&quot;</code><br>to:<br><code>&quot;syntax&quot;: &quot;Scheme.sublime-syntax&quot;</code><br>So you can avoid the annoying pop-up of failing to load ‘Scheme.tmLanguage’. Or you can just comment this line.</li>
-<li>Add below lines in ‘Key Bindings’ (via ‘settings’):<br><code> &#123;   &quot;keys&quot;: [&quot;command+r&quot;],   &quot;caption&quot;: &quot;SublimeREPL: Scheme&quot;,  &quot;command&quot;: &quot;run_existing_window_command&quot;,  &quot;args&quot;: &#123;  &quot;id&quot;: &quot;repl_scheme&quot;,  &quot;file&quot;: &quot;config/Scheme/Main.sublime-menu&quot; &#125;</code></li>
+<li>To run your codes and call the REPL in just one keystroke, add below lines in ‘Key Bindings’ (via ‘settings’): <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> &quot;keys&quot;: [&quot;command+r&quot;],</span><br><span class="line"> &quot;caption&quot;: &quot;SublimeREPL: Scheme&quot;,</span><br><span class="line"> &quot;command&quot;: &quot;run_existing_window_command&quot;,</span><br><span class="line"> &quot;args&quot;: &#123;</span><br><span class="line"> &quot;id&quot;: &quot;repl_scheme&quot;,</span><br><span class="line"> &quot;file&quot;: &quot;config/Scheme/Main.sublime-menu&quot;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
-<p>Then let’s happily code with Chez Scheme.</p>
+<p>Then let’s code happily with Chez Scheme.</p>
 
         </div>
 
