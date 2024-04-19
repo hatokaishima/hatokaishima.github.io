@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+
+    <title>for a brave new world</title>
+    
+<link rel="stylesheet" href="/css/reset.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/markdown.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div class="paper">
+            <div class="paper-main">
+                
+                    <div class="post-header"></div>
+                
+                <div class="post-main">
+
+    
+    
+        <div class="post-meta">
+            19 April 2024
+        </div>
+        <div class="post-main-title">
+            A better SublimeREPL for Chez Scheme REPL and practice
+        </div>
+        <div class="post-md">
+            <p>If neither of the following 4 applications can satisfy you in Chez Scheme learning, you could turn to SublimeREPL.</p>
+<ol>
+<li>Terminal. Chez Scheme contains a REPL environment, but too many parentheses have to be keyed in it in Terminal. Moreover, you cannot correct typos conveniently in Terminal.</li>
+<li>Vim. After setting up the .vimrc, you just have to type only one parenthesis every time, but its syntactic support for Chez Scheme is bad such as autoindent does not work for Chez Scheme and you have to quit it to Terminal if you want to run a code snippet. So much unnecessary finger dancing.</li>
+<li>DrRacket. Although it is rebuilt on Chez Scheme, it does not support Chez Scheme well and even Scheme(R6RS) itself. You will come across some strange error warnings. You can try some code snippets of <em>The Scheme Programming Language</em>(4th edition), especially the chapter 2. </li>
+<li>VScode. No taste? The GUI is too complicated. Its REPL function works terribly even though it offers a Chez Scheme REPL plug-in. The most important thing is that it is as RAM memory-hogging as DrRacket. Both of their user experience is bad.</li>
+</ol>
+<p>As to SublimeREPL, you have just to make three changes for a better experience.</p>
+<ol>
+<li>In ‘Sublime Text&#x2F;Packages&#x2F;SublimeREPL&#x2F;config&#x2F;Scheme’ (via ‘settings-browse packages’ of Sublime), under ‘“id”: “repl_scheme”‘:<br>change:<br><code>&quot;osx&quot;: [&quot;scheme&quot;],</code><br>to:<br><code>&quot;osx&quot;: [&quot;scheme&quot;, &quot;$file&quot;],</code>  </li>
+<li>In the same place as #1. :<br>change:<br><code>&quot;syntax&quot;: &quot;Packages/sublime-scheme-syntax/Scheme.tmLanguage&quot;</code><br>to:<br><code>&quot;syntax&quot;: &quot;Scheme.sublime-syntax&quot;</code><br>So you can avoid the annoying pop-up of failing to load ‘Scheme.tmLanguage’. Or you can just comment this line.</li>
+<li>Add below lines in ‘Key Bindings’ (via ‘settings’):<br><code> &#123;   &quot;keys&quot;: [&quot;command+r&quot;],   &quot;caption&quot;: &quot;SublimeREPL: Scheme&quot;,  &quot;command&quot;: &quot;run_existing_window_command&quot;,  &quot;args&quot;: &#123;  &quot;id&quot;: &quot;repl_scheme&quot;,  &quot;file&quot;: &quot;config/Scheme/Main.sublime-menu&quot; &#125;</code></li>
+</ol>
+<p>Then let’s happily code with Chez Scheme.</p>
+
+        </div>
+
+    
+
+</div>
+            </div>
+        </div>
+    </body>
+</html>
