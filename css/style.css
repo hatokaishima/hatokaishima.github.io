@@ -10,7 +10,6 @@
     --line-1: #808080;
     --line-2: #696969;
 }
-
 p
 {
     word-wrap: break-word;
@@ -19,7 +18,7 @@ p
 
 body
 {
-    font-family: "noto sans";
+    font-family: "SF UI Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", "Helvetica Neue", Helvetica, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     font-size: 16px;
     line-height: 1.75;
     letter-spacing: 0.6px;
@@ -43,7 +42,7 @@ a
     margin: 0 auto;
     padding: 72px 8vw 24px;
     background: #F7E7CE;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .header
@@ -54,10 +53,9 @@ a
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-content: center;
 }
-
 .logo
 {
     font-size: 3rem;
@@ -82,7 +80,6 @@ a
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-/*    background-color: #FAF0E6;*/
 }
 .nav li
 {
@@ -104,7 +101,7 @@ a
 }
 .nav li a:hover
 {
-    opacity: .1;
+    opacity: 1;
     transition: opacity ease-in-out .5s;
 }
 
@@ -135,7 +132,7 @@ a
     width: 100%;
     padding-bottom: 48px;
     margin-bottom: 48px;
-    border-bottom: 1px dotted var(--line-2);
+    border-bottom: 1px dashed var(--line-2);
 }
 .post-title
 {
@@ -155,7 +152,7 @@ a
 
 .post-date
 {
-    font-size: 0.8rem;
+    font-size: 0.875rem;
     color: var(--font-color-3);
 }
 
@@ -185,3 +182,31 @@ a
     margin-bottom: 32px;
 }
 
+.archive
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: normal;
+}
+.archive li
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: left;
+    padding: 12px 0;
+}
+
+.archive-title
+{
+    color: var(--font-color-1);
+    /*transition: color ease-in-out .5s;*/
+}
+.archive-title:hover
+{
+    color: var(--font-color-0);
+    transition: color ease-in-out .5s;
+}
