@@ -57,11 +57,14 @@
 </ol>
 <p>As to SublimeREPL (for MacOs, Linux does likewise), you have just to make three changes for a better experience.</p>
 <ol>
-<li><p>In ‘Sublime Text&#x2F;Packages&#x2F;SublimeREPL&#x2F;config&#x2F;Scheme’ (via ‘settings-browse packages’ of Sublime), under ‘“id”: “repl_scheme”‘:<br>change:<br><code>&quot;osx&quot;: [&quot;scheme&quot;],</code><br>to:<br><code>&quot;osx&quot;: [&quot;scheme&quot;, &quot;$file&quot;],</code>  </p>
-</li>
-<li><p>In the same place as #1. :<br>change:<br><code>&quot;syntax&quot;: &quot;Packages/sublime-scheme-syntax/Scheme.tmLanguage&quot;</code><br>to:<br><code>&quot;syntax&quot;: &quot;Scheme.sublime-syntax&quot;</code> (to get this file, please refer to <a target="_blank" rel="noopener" href="https://forum.sublimetext.com/t/problem-with-new-style-syntax-package/69030">this post</a> or download <a target="_blank" rel="noopener" href="https://github.com/absop/ST-Scheme/tree/master/syntax">here</a>)<br>So you can avoid the annoying pop-up of ‘error loading loading syntax file: “Scheme.tmLanguage”‘. Or you can just comment this line.</p>
-</li>
-<li><p>To run your codes and call the REPL in just one keystroke, add below lines in ‘Key Bindings’ (via ‘settings’): </p>
+<li>In ‘Sublime Text&#x2F;Packages&#x2F;SublimeREPL&#x2F;config&#x2F;Scheme’ (via ‘settings-browse packages’ of Sublime), under ‘“id”: “repl_scheme”‘:<br>change:<br><code>&quot;osx&quot;: [&quot;scheme&quot;],</code><br>to:<br><code>&quot;osx&quot;: [&quot;scheme&quot;, &quot;$file&quot;],</code>  </li>
+<li>In the same place as #1. :<br>change:<br><code>&quot;syntax&quot;: &quot;Packages/sublime-scheme-syntax/Scheme.tmLanguage&quot;</code><br>to:<br><code>&quot;syntax&quot;: &quot;Scheme.sublime-syntax&quot;</code> (to get this file, please refer to <a target="_blank" rel="noopener" href="https://forum.sublimetext.com/t/problem-with-new-style-syntax-package/69030">this post</a> or download <a target="_blank" rel="noopener" href="https://github.com/absop/ST-Scheme/tree/master/syntax">here</a>)</li>
+</ol>
+<p>or, if you have installed the package of ’Scheme’, to:<br><code>&quot;syntax&quot;: &quot;Packages/Scheme/syntax/Scheme.tmLanguage”</code>, because the path of the syntax file is <em>‘Scheme.sublime-package&#x2F;syntax&#x2F;Scheme.sublime-syntax’</em> if you unzip the package.</p>
+<p>So you can avoid the annoying pop-up of ‘error loading loading syntax file: “Scheme.tmLanguage”‘. Or you can just comment this line.</p>
+<ol start="3">
+<li>To run your codes and call the REPL in just one keystroke, add below lines in ‘Key Bindings’ (via ‘settings’):</li>
+</ol>
 <pre><code class="json">&#123;
   &quot;keys&quot;: [&quot;command+r&quot;],
   &quot;caption&quot;: &quot;SublimeREPL: Scheme&quot;,
@@ -72,8 +75,19 @@
    &#125;
 &#125;
 </code></pre>
-</li>
-</ol>
+<p>In addition, to get a perfect indentation in SublimeREPL, you also have to configure the ‘repl_view_settings’ of ‘SublimeREPL.sublime-settings’ under ‘repls’ folder of Package SublimeREPL as below:</p>
+<pre><code class="json">&quot;repl_view_settings&quot;: &#123;
+    &quot;translate_tabs_to_spaces&quot;: true,
+    &quot;auto_indent&quot;: true,
+    &quot;smart_indent&quot;: true,
+    &quot;spell_check&quot;: false,
+    &quot;indent_subsequent_lines&quot;: true,
+    &quot;detect_indentation&quot;: true,
+    &quot;auto_complete&quot;: true,
+    &quot;line_numbers&quot;: false,
+    &quot;gutter&quot;: false
+&#125;,
+</code></pre>
 <p>Then let’s code happily with Chez Scheme.</p>
 
         </div>
