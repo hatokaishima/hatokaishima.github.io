@@ -45,27 +45,24 @@
             A better SublimeREPL for Chez Scheme REPL and practice
         </div>
         <div class="post-meta">
-            19 April 2024
+            15 March 2024
         </div>
         <div class="post-md">
             <p>If none of the following 4 applications can satisfy you in Chez Scheme learning, you should turn to SublimeREPL.</p>
 <ol>
 <li>Terminal. Chez Scheme contains a REPL environment, but too many parentheses have to be keyed in it in Terminal. Moreover, you cannot correct typos conveniently in Terminal.</li>
 <li>Vim. After setting up the .vimrc, you just have to type only one parenthesis every time, but its syntactic support for Chez Scheme is bad such as autoindent does not work for Chez Scheme and you have to quit it to Terminal if you want to run a code snippet. So much unnecessary finger dancing.</li>
-<li>DrRacket. Although it is rebuilt on Chez Scheme, it does not support Chez Scheme well and even Scheme(R6RS) itself. You will come across some strange error warnings. You can try some code snippets of <em>The Scheme Programming Language</em>(4th edition), especially the chapter 2. </li>
+<li>DrRacket. Although it is rebuilt on Chez Scheme, it does not support Chez Scheme well and even Scheme(R6RS) itself. You will come across some strange error warnings. You can try some code snippets of <em><strong>The Scheme Programming Language</strong></em>(4th edition), especially the chapter 2. </li>
 <li>VScode. No taste? The GUI is too complicated. Its REPL function works terribly even though it offers a Chez Scheme REPL plug-in. The most important thing is that it is as RAM memory-hogging as DrRacket. Both of their user experience is bad.</li>
 </ol>
 <p>As to SublimeREPL (for MacOs, Linux does likewise), you have just to make three changes for a better experience.</p>
 <ol>
-<li><p>In ‘Sublime Text&#x2F;Packages&#x2F;SublimeREPL&#x2F;config&#x2F;Scheme’ (via ‘settings-browse packages’ of Sublime), under ‘“id”: “repl_scheme”‘:<br>change:<br><code>&quot;osx&quot;: [&quot;scheme&quot;],</code><br>to:<br><code>&quot;osx&quot;: [&quot;scheme&quot;, &quot;$file&quot;],</code>  </p>
+<li><p>In ‘Sublime Text&#x2F;Packages&#x2F;SublimeREPL&#x2F;config&#x2F;Scheme’ (via ‘settings-browse packages’ of Sublime), under ‘“id”: “repl_scheme”‘:<br>change:<br><code>&quot;osx&quot;: [&quot;scheme&quot;],</code><br>to:<br><code>&quot;osx&quot;: [&quot;scheme&quot;, &quot;$file&quot;],</code></p>
 </li>
 <li><p>In the same place as #1. :<br>change:<br><code>&quot;syntax&quot;: &quot;Packages/sublime-scheme-syntax/Scheme.tmLanguage&quot;</code><br>to:<br><code>&quot;syntax&quot;: &quot;Scheme.sublime-syntax&quot;</code> (to get this file, please refer to <a target="_blank" rel="noopener" href="https://forum.sublimetext.com/t/problem-with-new-style-syntax-package/69030">this post</a> or download <a target="_blank" rel="noopener" href="https://github.com/absop/ST-Scheme/tree/master/syntax">here</a>)</p>
-<p> or, if you have installed the package of ‘Scheme’ with package control (command+shift+p), to:<br> <code>&quot;syntax&quot;: &quot;Packages/Scheme/syntax/Scheme.tmLanguage”</code>, because the path of the syntax file is <strong>‘Scheme.sublime-package&#x2F;syntax&#x2F;Scheme.sublime-syntax’</strong> if you unzip the package.</p>
-<p> So you can avoid the annoying pop-up of ‘error loading loading syntax file: “Scheme.tmLanguage”‘. Or you can just comment this line.</p>
+<p> or, if you have installed the package of ‘Scheme’ with package control (command+shift+p), to:<br> <code>&quot;syntax&quot;: &quot;Packages/Scheme/syntax/Scheme.tmLanguage”</code>, because the path of the syntax file is <strong>‘Scheme.sublime-package&#x2F;syntax&#x2F;Scheme.sublime-syntax’</strong> if you unzip the package.<br> So you can avoid the annoying pop-up of ‘error loading loading syntax file: “Scheme.tmLanguage”‘. Or you can just comment this line.</p>
 </li>
-<li><p>To run your codes and call the REPL in just one keystroke, add below lines in ‘Key Bindings’ (via ‘settings’):</p>
-</li>
-</ol>
+<li><p>To run your codes and call the REPL in just one keystroke, add below lines in ‘Key Bindings’ (via ‘settings’): </p>
 <pre><code class="json">&#123;
   &quot;keys&quot;: [&quot;command+r&quot;],
   &quot;caption&quot;: &quot;SublimeREPL: Scheme&quot;,
@@ -76,7 +73,7 @@
    &#125;
 &#125;
 </code></pre>
-<p>In addition, to get a perfect indentation in SublimeREPL, you also have to configure the ‘repl_view_settings’ of ‘SublimeREPL.sublime-settings’ under ‘repls’ folder of Package SublimeREPL as below:</p>
+<p> In addition, to get a perfect indentation in SublimeREPL, you also have to configure the ‘repl_view_settings’ of ‘SublimeREPL.sublime-settings’ under ‘repls’ folder of Package SublimeREPL as below:</p>
 <pre><code class="json">&quot;repl_view_settings&quot;: &#123;
     &quot;translate_tabs_to_spaces&quot;: true,
     &quot;auto_indent&quot;: true,
@@ -89,7 +86,9 @@
     &quot;gutter&quot;: false
 &#125;,
 </code></pre>
-<p>Then let’s code happily with Chez Scheme.</p>
+<p> Then let’s code happily with Chez Scheme.</p>
+</li>
+</ol>
 
         </div>
 
