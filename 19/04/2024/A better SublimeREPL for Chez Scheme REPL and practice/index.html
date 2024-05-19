@@ -57,13 +57,14 @@
 </ol>
 <p>As to SublimeREPL (for MacOs, Linux does likewise), you have just to make three changes for a better experience.</p>
 <ol>
-<li>In ‘Sublime Text&#x2F;Packages&#x2F;SublimeREPL&#x2F;config&#x2F;Scheme’ (via ‘settings-browse packages’ of Sublime), under ‘“id”: “repl_scheme”‘:<br>change:<br><code>&quot;osx&quot;: [&quot;scheme&quot;],</code><br>to:<br><code>&quot;osx&quot;: [&quot;scheme&quot;, &quot;$file&quot;],</code>  </li>
-<li>In the same place as #1. :<br>change:<br><code>&quot;syntax&quot;: &quot;Packages/sublime-scheme-syntax/Scheme.tmLanguage&quot;</code><br>to:<br><code>&quot;syntax&quot;: &quot;Scheme.sublime-syntax&quot;</code> (to get this file, please refer to <a target="_blank" rel="noopener" href="https://forum.sublimetext.com/t/problem-with-new-style-syntax-package/69030">this post</a> or download <a target="_blank" rel="noopener" href="https://github.com/absop/ST-Scheme/tree/master/syntax">here</a>)</li>
-</ol>
-<p>or, if you have installed the package of ’Scheme’, to:<br><code>&quot;syntax&quot;: &quot;Packages/Scheme/syntax/Scheme.tmLanguage”</code>, because the path of the syntax file is <em>‘Scheme.sublime-package&#x2F;syntax&#x2F;Scheme.sublime-syntax’</em> if you unzip the package.</p>
-<p>So you can avoid the annoying pop-up of ‘error loading loading syntax file: “Scheme.tmLanguage”‘. Or you can just comment this line.</p>
-<ol start="3">
-<li>To run your codes and call the REPL in just one keystroke, add below lines in ‘Key Bindings’ (via ‘settings’):</li>
+<li><p>In ‘Sublime Text&#x2F;Packages&#x2F;SublimeREPL&#x2F;config&#x2F;Scheme’ (via ‘settings-browse packages’ of Sublime), under ‘“id”: “repl_scheme”‘:<br>change:<br><code>&quot;osx&quot;: [&quot;scheme&quot;],</code><br>to:<br><code>&quot;osx&quot;: [&quot;scheme&quot;, &quot;$file&quot;],</code>  </p>
+</li>
+<li><p>In the same place as #1. :<br>change:<br><code>&quot;syntax&quot;: &quot;Packages/sublime-scheme-syntax/Scheme.tmLanguage&quot;</code><br>to:<br><code>&quot;syntax&quot;: &quot;Scheme.sublime-syntax&quot;</code> (to get this file, please refer to <a target="_blank" rel="noopener" href="https://forum.sublimetext.com/t/problem-with-new-style-syntax-package/69030">this post</a> or download <a target="_blank" rel="noopener" href="https://github.com/absop/ST-Scheme/tree/master/syntax">here</a>)</p>
+<p> or, if you have installed the package of ‘Scheme’ with package control (command+shift+p), to:<br> <code>&quot;syntax&quot;: &quot;Packages/Scheme/syntax/Scheme.tmLanguage”</code>, because the path of the syntax file is <strong>‘Scheme.sublime-package&#x2F;syntax&#x2F;Scheme.sublime-syntax’</strong> if you unzip the package.</p>
+<p> So you can avoid the annoying pop-up of ‘error loading loading syntax file: “Scheme.tmLanguage”‘. Or you can just comment this line.</p>
+</li>
+<li><p>To run your codes and call the REPL in just one keystroke, add below lines in ‘Key Bindings’ (via ‘settings’):</p>
+</li>
 </ol>
 <pre><code class="json">&#123;
   &quot;keys&quot;: [&quot;command+r&quot;],
