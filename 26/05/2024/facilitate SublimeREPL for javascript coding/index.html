@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <title>for a brave new world</title>
+    
+<link rel="stylesheet" href="/css/reset.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/markdown.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div class="paper">
+            <div class="paper-main">
+                
+                    <div class="post-header">
+
+</div>
+
+
+<link rel="stylesheet" href="/css/a11y-dark.min.css">
+
+
+<script src="/js/highlight.min.js"></script>
+
+
+<script src="/js/highlightjs-line-numbers.js"></script>
+
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+                
+                <div class="post-main">
+
+    
+    
+        <div class="post-main-title">
+            facilitate SublimeREPL for javascript coding
+        </div>
+        <div class="post-meta">
+            26 May 2024
+        </div>
+        <div class="post-md">
+            <p>SublimeREPL is a good plugin for interactive coding. So if we would not like to use browser’s inner consoles for javascript coding practice, it is our excellent alternative (of course, install node.js first). Moreover, we can save our codes with Sublime Text, which we have no means to achieve conveniently with the browser console. But there is something wrong with SublimeREPL’s default setting of javascript invocation. If we just click ‘Tools-SublimeREPL-Node’, we will get an error as below:</p>
+<pre><code>node:internal/validators:162
+    throw new ERR_INVALID_ARG_TYPE(name, &#39;string&#39;, value);
+    ^
+
+TypeError [ERR_INVALID_ARG_TYPE]: The &quot;stringToWrite&quot; argument must be of type string. Received null
+    at validateString (node:internal/validators:162:11)
+    at [_writeToOutput] [as _writeToOutput] (node:internal/readline/interface:433:5)
+    at REPLServer.prompt (node:internal/readline/interface:391:27)
+    at REPLServer.displayPrompt (node:repl:1203:8)
+    at new REPLServer (node:repl:1063:8)
+    at Object.start (node:repl:1071:10)
+    at /Users/.../Library/Application Support/Sublime Text/Packages/SublimeREPL/config/NodeJS/repl.js:5:20
+    at Object.&lt;anonymous&gt; (/Users/.../Library/Application Support/Sublime Text/Packages/SublimeREPL/config/NodeJS/repl.js:38:3)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10) &#123;
+  code: &#39;ERR_INVALID_ARG_TYPE&#39;
+&#125;
+
+Node.js v20.11.1
+
+***Repl Closed***
+</code></pre>
+<p>Fortunately, it has been <a target="_blank" rel="noopener" href="https://github.com/wuub/SublimeREPL/pull/575/commits/18c2bda9003663fc043b5241b5220e79db87a0c3">fixed</a>, just make two minor changes of <strong>SublimeREPL&#x2F;config&#x2F;NodeJS&#x2F;repl.js</strong> (as in line 6 and line 35):</p>
+<pre><code>(function () &#123;
+
+    var repl = require(&#39;repl&#39;);
+
+    var rep = repl.start(&#123;
+        prompt:    &#39;&gt; &#39;, // **the default setting here is &#39;null&#39;**,
+        source:    null, //process.stdin,
+        eval:      null, //require(&#39;vm&#39;).runInThisContext,
+        useGlobal: true, //false
+        useColors: false
+    &#125;);
+
+
+    var net = require(&#39;net&#39;);
+    var ac_port = process.env.SUBLIMEREPL_AC_PORT;
+    var client = new net.Socket();
+    client.connect(ac_port, &quot;localhost&quot;, function() &#123;&#125;);
+
+    client.on(&#39;data&#39;, function(data) &#123;
+        var strData = data.toString();
+        var index = strData.indexOf(&quot;:&quot;);
+        var json = strData.slice(index+1, strData.length - 1)
+        var inData = JSON.parse(json);
+        var wordIndex = inData.line.slice(inData.cursor_pos).search(/\b/);
+        if(wordIndex !== 0)&#123;
+            inData.line = inData.line.slice(0, inData.cursor_pos);
+        &#125;
+
+        var send = function (_, completions) &#123;
+            var comps = completions[0];
+            var msg = JSON.stringify([inData.line, comps]);
+            var payload = msg.length + &quot;:&quot; + msg + &quot;,&quot;;
+            client.write(payload)
+        &#125;
+        rep.completer(inData.line, send);// **the default setting here is &#39;rep.rli.completer(inData.line, send)&#39;**,
+    &#125;);
+
+&#125;)();
+</code></pre>
+<p>We do not know why SublimeREPL has not changed it since so many years are gone.</p>
+<p>Then we can set a key binding for easily calling SublimeREPL for javascript:</p>
+<pre><code>&#123;
+    &quot;keys&quot;: [&quot;ctrl+shift+j&quot;], // The binding of &#39;command+shift+j&#39; has been used for other one by Sublime Text.
+    &quot;caption&quot;: &quot;SublimeREPL: Node&quot;,
+    &quot;command&quot;: &quot;run_existing_window_command&quot;,
+    &quot;args&quot;: &#123;
+      &quot;id&quot;: &quot;repl_node&quot;,
+      &quot;file&quot;: &quot;config/NodeJS/Main.sublime-menu&quot;
+    &#125;
+&#125;,
+</code></pre>
+
+        </div>
+
+    
+
+</div>
+
+            </div>
+        </div>
+    </body>
+</html>
